@@ -31,6 +31,7 @@ import com.github.wuxudong.rncharts.markers.RNCircleMarkerView;
 import com.github.wuxudong.rncharts.utils.BridgeUtils;
 import com.github.wuxudong.rncharts.utils.EasingFunctionHelper;
 import com.github.wuxudong.rncharts.utils.TypefaceUtils;
+import com.github.wuxudong.rncharts.utils.XBLargeValueFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -477,7 +478,7 @@ public abstract class ChartBaseManager<T extends Chart, U extends Entry> extends
             String valueFormatter = propMap.getString("valueFormatter");
 
             if ("largeValue".equals(valueFormatter)) {
-                axis.setValueFormatter(new LargeValueFormatter());
+                axis.setValueFormatter(new XBLargeValueFormatter());
             } else if ("percent".equals(valueFormatter)) {
                 axis.setValueFormatter(new PercentFormatter());
             } else if ("date".equals(valueFormatter)) {

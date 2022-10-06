@@ -17,6 +17,7 @@ import com.github.wuxudong.rncharts.charts.CustomFormatter;
 import com.github.wuxudong.rncharts.charts.DateFormatter;
 import com.github.wuxudong.rncharts.charts.IndexValueFormatter;
 import com.github.wuxudong.rncharts.charts.LabelByXValueFormatter;
+import com.github.wuxudong.rncharts.utils.XBLargeValueFormatter;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -64,7 +65,7 @@ public class ChartDataSetConfigUtils {
             String valueFormatter = config.getString("valueFormatter");
 
             if ("largeValue".equals(valueFormatter)) {
-                dataSet.setValueFormatter(new LargeValueFormatter());
+                dataSet.setValueFormatter(new XBLargeValueFormatter());
             } else if ("percent".equals(valueFormatter)) {
                 dataSet.setValueFormatter(new PercentFormatter());
             } else if ("date".equals(valueFormatter)) {
